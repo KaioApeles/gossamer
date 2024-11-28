@@ -142,14 +142,14 @@ To run more than two nodes, repeat steps for bob with a new `port` and `base-pat
 
 Available built-in keys:
 ```
-./bin/gossmer --key alice
-./bin/gossmer --key bob
-./bin/gossmer --key charlie
-./bin/gossmer --key dave
-./bin/gossmer --key eve
-./bin/gossmer --key ferdie
-./bin/gossmer --key george
-./bin/gossmer --key heather
+./bin/gossamer --key alice
+./bin/gossamer --key bob
+./bin/gossamer --key charlie
+./bin/gossamer --key dave
+./bin/gossamer --key eve
+./bin/gossamer --key ferdie
+./bin/gossamer --key george
+./bin/gossamer --key heather
 ```
 
 ## Initialising Nodes

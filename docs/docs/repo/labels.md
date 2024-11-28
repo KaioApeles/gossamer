@@ -23,7 +23,7 @@ Below is the list of labels and their descriptions used in Gossamer repository.
   - **T-research** - this issue/pr is a research type issue.
   - **T-investigation** - this issue/pr is an investigation, probably related to some bug with unknown causes.
 - **`C-`** Complexity label. We operate only 3 complexity levels.
-  - **C-simple** -  Minor changes changes, no additional research needed. Good first issue/review.
+  - **C-simple** -  Minor changes, no additional research needed. Good first issue/review.
   - **C-complex** - Complex changes across multiple modules. Possibly will require additional research.
   - **C-chaotic** - Unpredictable nature of this task/changes makes its chaotic.
 - **`P-`** Priority level. We only have 3 priority levels, everything else is average by default. 
@@ -35,7 +35,7 @@ Below is the list of labels and their descriptions used in Gossamer repository.
   - **S-tests** - issue related to adding new tests.  
   - **S-doc** - documentation related.
   - **S-cli** - issue related to Gossamer CLI.
-  - **S-ci** - issue related to continuous integration tasks or piplelines.
+  - **S-ci** - issue related to continuous integration tasks or pipelines.
   - **S-crypto** - issues related to the lib/crypto package.
   - **S-grandpa** - issues related to block finality.
   - **S-babe** - issues related to block production functionality. 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Import Sate
+title: Import State
 permalink: /usage/import-state/
 ---
 
