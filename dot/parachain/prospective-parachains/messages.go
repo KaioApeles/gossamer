@@ -54,8 +54,6 @@ type GetBackableCandidates struct {
 	RequestedQty    uint32
 	Ancestors       Ancestors
 	Response        chan []parachaintypes.CandidateHashAndRelayParent
-	Count           uint32
-	Tx              chan []string
 }
 
 func (GetBackableCandidates) isProspectiveParachainsMessage() {}

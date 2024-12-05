@@ -127,7 +127,7 @@ func (pp *ProspectiveParachains) processMessage(msg any) {
 	case CandidateBacked:
 		panic("not implemented yet: see issue #4309")
 	case GetBackableCandidates:
-		pp.AnswerGetBackableCandidates(pp.View, msg.RelayParentHash, msg.ParaId, msg.Count, msg.Ancestors, msg.Response)
+		pp.AnswerGetBackableCandidates(pp.View, msg.RelayParentHash, msg.ParaId, msg.RequestedQty, msg.Ancestors, msg.Response)
 	case GetHypotheticalMembership:
 		panic("not implemented yet: see issue #4311")
 	case GetMinimumRelayParents:
