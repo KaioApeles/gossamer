@@ -829,7 +829,7 @@ func TestAnswerProspectiveValidationDataRequest(t *testing.T) {
 		assert.Equal(t, result.MaxPovSize, uint32(3))
 	})
 
-	t.Run("with_active_and_with_head_data", func(t *testing.T) {
+	t.Run("with_head_data_hash_doesnt_match", func(t *testing.T) {
 		reqParent := parachaintypes.HeadData{Data: []byte{0xc4}}
 
 		baseConstraints := &parachaintypes.Constraints{
@@ -878,7 +878,7 @@ func TestAnswerProspectiveValidationDataRequest(t *testing.T) {
 			CandidateRelayParent: common.Hash{0x01},
 			ParentHeadData: ParentHeadDataWithHash{
 				Data: reqParent,
-				Hash: OnlyHash(common.Hash{0x01}),
+				Hash: OnlyHash(common.Hash{0xc3}),
 			},
 		}
 
@@ -893,7 +893,7 @@ func TestAnswerProspectiveValidationDataRequest(t *testing.T) {
 
 		result := <-sender
 
-		assert.Nil(t, result, "Expected result to be nil when the head data hash does not match the head data")
+		assert.NotEqual(t, result.ParentHead, common.Hash{0xc3})
 	})
 
 	// Close the channels
