@@ -321,12 +321,13 @@ func (pp *ProspectiveParachains) answerProspectiveValidationDataRequest(
 	// iterate over active chains
 	for leaf := range pp.View.activeLeaves {
 		relayBlockViewData, exists := pp.View.perRelayParent[leaf]
+
 		if !exists {
 			continue
 		}
 
-		fragmentChain, exexists := relayBlockViewData.fragmentChains[request.ParaId]
-		if !exexists {
+		fragmentChain, exists := relayBlockViewData.fragmentChains[request.ParaId]
+		if !exists {
 			continue
 		}
 
@@ -335,7 +336,7 @@ func (pp *ProspectiveParachains) answerProspectiveValidationDataRequest(
 		}
 
 		if relayParentInfo == nil {
-			relayParentInfo = fragmentChain.scope.ancestor(parentHeadDataHash)
+			relayParentInfo = fragmentChain.scope.ancestor(request.CandidateRelayParent)
 		}
 
 		if headData == nil {
