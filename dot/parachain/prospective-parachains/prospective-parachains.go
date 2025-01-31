@@ -312,7 +312,7 @@ func (pp *ProspectiveParachains) answerProspectiveValidationDataRequest(
 		parentHeadDataHash = common.Hash(value)
 	case ParentHeadDataWithHash:
 		headData = &value.Data
-		parentHeadDataHash = common.Hash(value.Hash)
+		parentHeadDataHash = value.Hash
 	}
 
 	var relayParentInfo *relayChainBlockInfo
