@@ -161,7 +161,7 @@ type ParentHeadDataWithHash struct {
 	// This will be provided for collations with elastic scaling enabled.
 	Data parachaintypes.HeadData
 	// Parent head-data hash.
-	Hash OnlyHash
+	Hash common.Hash
 }
 
 func (ParentHeadDataWithHash) isParentHeadData() {}

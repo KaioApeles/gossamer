@@ -306,7 +306,7 @@ func (pp *ProspectiveParachains) answerProspectiveValidationDataRequest(
 	var headData *parachaintypes.HeadData
 	var parentHeadDataHash common.Hash
 
-	// Try getting the needed data from any fragment chain.
+	// extracting informations from the request depending on the incoming type.
 	switch value := request.ParentHeadData.(type) {
 	case OnlyHash:
 		parentHeadDataHash = common.Hash(value)
@@ -318,7 +318,7 @@ func (pp *ProspectiveParachains) answerProspectiveValidationDataRequest(
 	var relayParentInfo *relayChainBlockInfo
 	var maxPovSize *uint32
 
-	// iterate over active chains
+	// // iterate over active leaves
 	for leaf := range pp.View.activeLeaves {
 		relayBlockViewData, exists := pp.View.perRelayParent[leaf]
 
@@ -331,6 +331,7 @@ func (pp *ProspectiveParachains) answerProspectiveValidationDataRequest(
 			continue
 		}
 
+		// stop the iteration once we retrieve all the informations
 		if headData != nil && relayParentInfo != nil && maxPovSize != nil {
 			break
 		}

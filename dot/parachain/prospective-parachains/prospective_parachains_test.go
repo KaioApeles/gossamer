@@ -669,7 +669,7 @@ func TestAnswerProspectiveValidationDataRequest(t *testing.T) {
 			ParaId:               parachaintypes.ParaID(1),
 			CandidateRelayParent: common.Hash{0x01},
 			ParentHeadData: ParentHeadDataWithHash{
-				Hash: OnlyHash(common.Hash{0x01}),
+				Hash: common.Hash{0x01},
 				Data: parachaintypes.HeadData{Data: []byte{0x01}},
 			},
 		}
@@ -808,7 +808,7 @@ func TestAnswerProspectiveValidationDataRequest(t *testing.T) {
 			CandidateRelayParent: common.Hash{0x01},
 			ParentHeadData: ParentHeadDataWithHash{
 				Data: reqParent,
-				Hash: OnlyHash(reqParentHash),
+				Hash: reqParentHash,
 			},
 		}
 
@@ -878,7 +878,7 @@ func TestAnswerProspectiveValidationDataRequest(t *testing.T) {
 			CandidateRelayParent: common.Hash{0x01},
 			ParentHeadData: ParentHeadDataWithHash{
 				Data: reqParent,
-				Hash: OnlyHash(common.Hash{0xc3}),
+				Hash: common.Hash{0xc3},
 			},
 		}
 
